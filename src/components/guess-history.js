@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function GuessHistory(props) {
     const guesses = props.currentGuessHistory
-    const guessList = guesses.map((guess) => 
-    <li key={guess.toString()}>
-        {guess.toString()}
+    const guessList = guesses.map((guess, index) => 
+    <li key={index}>
+        {guess}
     </li>
     )
     return (
@@ -14,6 +14,6 @@ export default function GuessHistory(props) {
     )
 }
 
-// GuessHistory.defaultProps = {
-//     guess: []
-// }
+GuessHistory.defaultProps = {
+    currentGuessHistory: []
+}

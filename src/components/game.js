@@ -3,6 +3,7 @@ import React from 'react';
 import GuessHistory from './guess-history'
 import Feedback from './feedback'
 import GuessInput from './guess-input'
+import ResetButton from './reset-button';
 
 export default class Game extends React.Component {
     constructor(props) {
@@ -22,18 +23,33 @@ export default class Game extends React.Component {
     
         addInput(value) {
             this.setState({
-                guessHistory: [...this.state.guessHistory, {value}]
+                guessHistory: [...this.state.guessHistory, value]
             })
         }
+
+        handleResetButtonClick(e) {
+            e.preventDefault()
+            this.setState({
+                guessHistory: [],
+                target: Math.floor(Math.random() * 100) + 1
+            })
+        }
+
+       
     
     
     
     render() {
+       let target = this.state.target
+        let recentGuess = this.state.guessHistory.slice(-1)
+        console.log(recentGuess)
+        let guessHistory = this.state.guessHistory
         return (
             <div>
-                <Feedback recentGuess={this.state.guessHistory.slice(-1)} target={this.state.target}/>
+                <Feedback newGuess={recentGuess} target={target}/>
+                <ResetButton target={target} recentGuess={recentGuess} onClick={event => this.handleResetButtonClick(event)} />
                 <GuessInput addInput={guess => this.addInput(guess)}/>
-                <GuessHistory currentGuessHistory={this.state.guessHistory}/>
+                <GuessHistory currentGuessHistory={guessHistory}/>
             </div>
             )
     

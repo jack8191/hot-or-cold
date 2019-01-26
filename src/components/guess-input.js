@@ -15,8 +15,13 @@ import React from 'react'
 //     )}
 
 export default class GuessForm extends React.Component {
+    static defaultProps = {
+        addInput: ()=>{} //noop a function that does nothing on purpose
+    }
+    input = React.createRef();
     onSubmit(event) {
         event.preventDefault()
+        
         if (this.props.addInput) {
             const value = this.input.value
             this.props.addInput(value)
