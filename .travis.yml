@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: tgFynovrRYttQn61oun/DSu0zgel84vblGoM6N27dMrhmZD6M4X4ovzgkYLPJrfVEDLn0QJR6vZP2h55ohlyKBKOBY8n/AO13/Bxq0creIxABjxJ89jyR4lkQJmfCzMdz7mqhZjzc+KPpIv7dATUrcT04gXd3bbQ7yCCkdWTrtPle5DvI2cTP44NYGZZUQl4NyNBAqAKHu64s9O4Abgxsw0RkupUoa9MfS9xDAPH/+0U4FzLa+oN3aI8KpYGAUc/KoJ2k1+GDDTSwAuyskYIhJXNEge3JXy1cATnon6YAY7XEAAHqrgQCFNSYA69PwsteuObJhcMG3034FV+LriN16C+SGe7Cchlf1lFYvpx1fedGwkTSvF5mQ1ffT42tig0bccnMowVQ8JganxgNswYIltkE5FBBX4fAU1Um8/kbD91QkY6wekGB2dDfXqRy0VysA1RrggIuTzPRNbVjzozPb0V/OmYtA3RjAxfp6Ut1wt9LDC29HIszeZ+0Gw4to2BwUXyid0bUhBfQJQgXWM1TLglDlPChYY/FuUllOXOh+8YDd/P6VcZcJKqpIYivdPSaUay0WJTTZZH82WdMBHYfwahigkY1gWElpSBR5B8RFg0igHbtgK6w8buZFptt9YC19p2bmg6FuPwf3csVygVzBx5wc1MHHEHKX8H9nR7KTo=
+  app: vast-coast-88717
+  on:
+    repo: jack8191/hot-or-cold
