@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GuessInput /> renders correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    autoComplete="off"
+    className="text"
+    id="userGuess"
+    max="101"
+    min="1"
+    name="userGuess"
+    type="number"
+  />
+  <button
+    className="button"
+    id="guessButton"
+    name="submit"
+    type="submit"
+  >
+    Guess
+  </button>
+</form>
+`;
