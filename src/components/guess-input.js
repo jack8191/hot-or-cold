@@ -36,7 +36,7 @@ export default class GuessForm extends React.Component {
                 id="userGuess"
                 className="text"
                 min="1"
-                max="100"
+                max="101"
                 autoComplete="off"
                 ref={input => (this.input = input)} />
             <button

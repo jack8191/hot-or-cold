@@ -2,6 +2,7 @@ import React from 'react'
 import {shallow, mount} from 'enzyme'
 
 import GuessInput from './guess-input'
+import toJson from 'enzyme-to-json'
 
 describe('<GuessInput />', () => {
     it('Renders without crashing', () => {
@@ -22,4 +23,9 @@ describe('<GuessInput />', () => {
         expect(callback).toHaveBeenCalledWith(input)
         
     })
+    it('renders correctly', () => {
+        const wrapper = shallow(<GuessInput/>)
+       
+        expect(toJson(wrapper)).toMatchSnapshot();
+      });
 })
